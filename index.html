@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d97b73">
+
+  <!-- Primary SEO -->
+  <title>Valentine Letter — Interactive Love Letter | mrchandrayee</title>
+  <meta name="description" content="An interactive Valentine's Day love letter with a pixel-art cat, floating hearts, envelope animation, and a playful YES/NO button. Pure HTML, CSS & JavaScript.">
+  <meta name="keywords" content="valentine letter, interactive love letter, CSS animation, JavaScript, pixel art cat, valentine's day, web design, mrchandrayee, Chandrayee">
+  <meta name="author" content="mrchandrayee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mrchandrayee.github.io/valentine-letter-project/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrchandrayee.github.io/valentine-letter-project/">
+  <meta property="og:title" content="Valentine Letter — Interactive Love Letter | mrchandrayee">
+  <meta property="og:description" content="An interactive Valentine's Day love letter with pixel-art cat, floating hearts, envelope animation and playful YES/NO interaction.">
+  <meta property="og:image" content="https://mrchandrayee.github.io/valentine-letter-project/preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mrchandrayee.github.io/valentine-letter-project/">
+  <meta name="twitter:title" content="Valentine Letter — Interactive Love Letter | mrchandrayee">
+  <meta name="twitter:description" content="An interactive Valentine's Day love letter with pixel-art cat, floating hearts, and a playful YES/NO interaction.">
+  <meta name="twitter:image" content="https://mrchandrayee.github.io/valentine-letter-project/preview.png">
+  <meta name="twitter:creator" content="@mrchandrayee">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Valentine Letter — Interactive Love Letter",
+    "description": "An interactive Valentine's Day love letter with pixel-art cat, floating hearts, envelope animation, and playful YES/NO interaction. Pure HTML, CSS & JavaScript.",
+    "url": "https://mrchandrayee.github.io/valentine-letter-project/",
+    "author": {
+      "@type": "Person",
+      "name": "mrchandrayee",
+      "url": "https://github.com/mrchandrayee"
+    },
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="browser">
+  <div class="browser-tab"><i></i><span>Valentine Letter — <b>HTML · CSS · JS</b></span></div>
+  <div class="browser-bar"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span><span class="address">localhost / love</span></div>
+  <main class="window" id="scene">
+    <div class="float-hearts" id="floatHearts"></div>
+    <section class="intro" id="intro">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open your letter">
+        <div class="flap"></div><div class="letter-heart">♥</div>
+      </div>
+      <h1>♥ Happy 1 Month ♥</h1>
+      <div class="bow" id="bow" aria-hidden="true"><span class="arrow">➤</span><span class="bow-line"></span><span class="bow-handle"></span></div>
+      <p class="instruction">Aim &amp; release to shoot Cupid’s arrow</p>
+      <button class="open-letter" id="openLetter">OPEN MY LETTER</button>
+    </section>
+
+    <section class="love-window hidden" id="loveWindow" aria-label="Love letter">
+      <header class="titlebar"><strong>LOVE</strong><div class="window-actions"><span>−</span><span>□</span><span>×</span></div></header>
+      <div class="heart-divider">♥ · ♥ · ♥</div>
+      <div class="love-content">
+        <h2 id="question">Happy 1 month, my love ♡ Still love me?</h2>
+        <canvas id="cat" width="180" height="160" aria-label="Pixel art cat holding a heart"></canvas>
+        <div class="buttons"><button id="yesBtn">YES</button><button id="noBtn">NO</button></div>
+      </div>
+    </section>
+    <div class="success hidden" id="success">
+      <div class="success-heart">♥</div>
+      <h2>Yippeeee! I love you!</h2>
+      <p>One month down, forever to go.<br>Happy anniversary, my love ♡</p>
+      <button id="replay">REPLAY ♡</button>
+    </div>
+  </main>
+</div>
+<section class="code-preview" aria-label="Code used in this project">
+  <div><h3>Html</h3><pre>&lt;section class="window"&gt;
+  &lt;header class="titlebar"&gt;LOVE&lt;/header&gt;
+  &lt;h1&gt;Do you love me?&lt;/h1&gt;
+  &lt;canvas id="cat"&gt;&lt;/canvas&gt;
+  &lt;button id="yesBtn"&gt;YES&lt;/button&gt;
+  &lt;button id="noBtn"&gt;NO&lt;/button&gt;
+&lt;/section&gt;</pre></div>
+  <div><h3>CSS</h3><pre>:root {
+  --coral: #d97b73;
+  --red: #e23b4e;
+}
+.love-window {
+  border: 5px solid var(--coral);
+  border-radius: 12px;
+}
+#noBtn {
+  position: relative;
+  transition: left .18s, top .18s;
+}</pre></div>
+  <div><h3>Js</h3><pre>// NO runs away
+function dodge() {
+  noBtn.style.position = 'absolute';
+  noBtn.style.left = rand() + 'px';
+  yesScale += 0.07;
+}
+noBtn.addEventListener('pointerenter', dodge);
+yesBtn.onclick = () => {
+  title.textContent = 'Yippeeee!';
+  rainHearts();
+};</pre></div>
+</section>
+<script src="script.js"></script>
+</body></html>
